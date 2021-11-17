@@ -1,4 +1,4 @@
-package demo.model.entity.book;
+package demo.entity.book;
 
 import java.util.Date;
 

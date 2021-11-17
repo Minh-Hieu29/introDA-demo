@@ -1,12 +1,12 @@
-package demo.logicApplication.bookDAO;
+package demo.service.book;
 
 import java.util.List;
 
 import org.springframework.data.domain.Pageable;
 
-import demo.model.dto.book.BookItemDTO;
+import demo.dto.book.BookItemDTO;
 
-public interface IBookItemService {
+public interface BookItemServiceImpl {
 	BookItemDTO save(BookItemDTO bookItemDTO);
 	void delete(long[] ids);
 	List<BookItemDTO> findAll(Pageable pageable);

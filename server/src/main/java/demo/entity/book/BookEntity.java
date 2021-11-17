@@ -1,4 +1,4 @@
-package demo.model.entity.book;
+package demo.entity.book;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +22,7 @@ public class BookEntity extends BaseEntity{
 	private String isbn;
 	
 	@Column(name = "title")
-	private String tittle;
+	private String title;
 	
 	@Column(name = "summary")
 	private String summary;
@@ -58,11 +58,12 @@ public class BookEntity extends BaseEntity{
 	public void setIsbn(String isbn) {
 		this.isbn = isbn;
 	}
-	public String getTittle() {
-		return tittle;
+	
+	public String getTitle() {
+		return title;
 	}
-	public void setTittle(String tittle) {
-		this.tittle = tittle;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 	public String getSummary() {
 		return summary;

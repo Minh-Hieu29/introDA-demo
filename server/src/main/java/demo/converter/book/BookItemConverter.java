@@ -1,9 +1,9 @@
-package demo.converter;
+package demo.converter.book;
 
 import org.springframework.stereotype.Component;
 
-import demo.model.entity.book.*;
-import demo.model.dto.book.*;
+import demo.dto.book.BookItemDTO;
+import demo.entity.book.BookItemEntity;
 
 @Component
 public class BookItemConverter {

@@ -1,4 +1,4 @@
-package demo.logicApplication.bookDAO;
+package demo.service.book.impl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,15 +7,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import demo.converter.BookItemConverter;
-import demo.model.dto.book.BookItemDTO;
-import demo.model.entity.book.BookEntity;
-import demo.model.entity.book.BookItemEntity;
+import demo.converter.book.BookItemConverter;
+import demo.dto.book.BookItemDTO;
+import demo.entity.book.BookEntity;
+import demo.entity.book.BookItemEntity;
 import demo.repository.book.BookItemRepository;
 import demo.repository.book.BookRepository;
+import demo.service.book.BookItemServiceImpl;
+
 
 @Service
-public class BookItemService implements IBookItemService{
+public class BookItemService implements BookItemServiceImpl{
 
 	@Autowired
 	private BookItemRepository bookItemRepository;
@@ -45,8 +47,7 @@ public class BookItemService implements IBookItemService{
 	public void delete(long[] ids) {
 		for(long item: ids) {
 			bookItemRepository.deleteById(item);
-		}
-		
+		}	
 	}
 
 	@Override
@@ -65,5 +66,7 @@ public class BookItemService implements IBookItemService{
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
+	
 
 }
