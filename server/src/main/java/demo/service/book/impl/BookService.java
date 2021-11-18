@@ -9,12 +9,10 @@ import org.springframework.stereotype.Service;
 
 import demo.converter.book.BookConverter;
 import demo.dto.book.BookDTO;
-import demo.dto.book.BookItemDTO;
 import demo.entity.book.AuthorEntity;
 import demo.entity.book.BookEntity;
 import demo.entity.book.CategoryEntity;
 import demo.entity.book.PublisherEntity;
-import demo.entity.book.bookEntity;
 import demo.repository.book.AuthorRepository;
 import demo.repository.book.BookRepository;
 import demo.repository.book.CategoryRepository;
@@ -48,7 +46,7 @@ public class BookService implements BookServiceImpl {
 		} else {
 			bookEntity = bookConverter.toEntity(bookDTO);
 		}
-//		AuthorEntity authorEntity = authorRepository.findOneById(bookDTO.ge)
+		AuthorEntity authorEntity = authorRepository.findOneById(bookDTO.getId());
 		CategoryEntity categoryEntity = categoryRepository.findOneById(bookDTO.getId());
 		PublisherEntity publisherEntity = publisherRepository.findOneById(bookDTO.getId());
 		bookEntity.setPublisher(publisherEntity);

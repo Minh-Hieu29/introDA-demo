@@ -28,4 +28,14 @@ public class JpaAuditingConfig {
 			return Optional.of(authentication.getName());
 		}
 	}
+	
+//	@Bean("bookItemAPI1")
+//	BookItemAPI bookItemConfig() {
+//		return new BookItemAPI();
+//	}
+//	
+//	@Bean("bookAPI1")
+//	BookAPI bookConfig() {
+//		return new BookAPI();
+//	}
 }

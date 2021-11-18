@@ -1,6 +1,5 @@
 package demo.api.book;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -15,48 +14,42 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import demo.api.output.BookItemOutput;
-import demo.dto.book.BookItemDTO;
-import demo.service.book.BookItemServiceImpl;
-
-
-
+import demo.api.output.BookOutput;
+import demo.dto.book.PublisherDTO;
+import demo.service.book.PublisherServiceImpl;
 
 @CrossOrigin
-@RestController()
-public class BookItemAPI {
+@RestController
+public class PublisherAPI {
 
 	@Autowired
-	private BookItemServiceImpl bookItemService;
+	private PublisherServiceImpl publisherServiceImpl;
 	
-	@GetMapping(value = "/api/book-item")
-	public BookItemOutput showBookItem(@RequestParam(name = "page", required = false, defaultValue = "0") int page,
+	@GetMapping(value = "/api/publisher")
+	public BookOutput showPublisher(@RequestParam(name = "page", required = false, defaultValue = "0") int page,
 										@RequestParam(name="limit", required = false, defaultValue = "5") int limit,
 										@RequestParam(name="sort", required = false, defaultValue = "ASC") String sort) {
 		Sort sortable = null;
 		sortable = Sort.by("id").ascending();
-		BookItemOutput result = new BookItemOutput();
+		BookOutput result = new BookOutput();
 		result.setPage(page);
 		Pageable pageable = PageRequest.of(page, limit, sortable);
-		result.setListResult(bookItemService.findAll(pageable));
-		result.setTotalPage((int) Math.ceil((double) (bookItemService.totalItem())/limit));
+		result.setListPublisher(publisherServiceImpl.findAll(pageable));
+		result.setTotalPage((int) Math.ceil((double) (publisherServiceImpl.totalItem())/limit));
 		return result;
 	}
 	
-	@PostMapping(value = "/api/book-item")
-	public BookItemDTO updateBookItem(@RequestBody BookItemDTO model) {
-		return bookItemService.save(model);
+	@PostMapping(value = "/api/publisher")
+	public PublisherDTO updatePublisherDTO(@RequestBody PublisherDTO model) {
+		return publisherServiceImpl.save(model);
 	}
-	
-	@PutMapping(value = "/api/book-item/{id}")
-	public BookItemDTO updateBookItem(@RequestBody BookItemDTO model, @PathVariable("id") long id) {
+	@PutMapping(value = "/api/publisher/{id}")
+	public PublisherDTO updatePublisherDTO(@RequestBody PublisherDTO model, @PathVariable("id") long id) {
 		model.setId(id);
-		return bookItemService.save(model);
+		return publisherServiceImpl.save(model);
 	}
-	
-	@DeleteMapping(value = "/api/book-item")
-	public void deleteBookItem(@RequestBody long[] ids) {
-		bookItemService.delete(ids);
+	@DeleteMapping(value = "/api/publisher")
+	public void deletePublisher(@RequestBody long[] ids) {
+		publisherServiceImpl.delete(ids);
 	}
-	
 }

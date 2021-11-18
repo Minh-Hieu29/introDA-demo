@@ -1,5 +1,21 @@
 package demo.dto.book;
 
-public class PublisherDTO extends AbstractDTO<BookItemDTO>{
+public class PublisherDTO extends AbstractDTO<PublisherDTO>{
 
+	private String name;
+	private String address;
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	
+	
 }

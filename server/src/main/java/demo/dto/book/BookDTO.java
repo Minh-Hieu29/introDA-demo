@@ -1,11 +1,14 @@
 package demo.dto.book;
 
-public class BookDTO extends AbstractDTO<BookItemDTO>{
+public class BookDTO extends AbstractDTO<BookDTO>{
 	private String isbn;
 	private String title;
 	private String summary;
 	private int pages;
 	private String language;
+	private String categoryID;
+	private String publisherID;
+	
 	public String getIsbn() {
 		return isbn;
 	}
@@ -35,6 +38,18 @@ public class BookDTO extends AbstractDTO<BookItemDTO>{
 	}
 	public void setLanguage(String language) {
 		this.language = language;
+	}
+	public String getCategoryID() {
+		return categoryID;
+	}
+	public void setCategoryID(String categoryID) {
+		this.categoryID = categoryID;
+	}
+	public String getPublisherID() {
+		return publisherID;
+	}
+	public void setPublisherID(String publisherID) {
+		this.publisherID = publisherID;
 	}
 	
 	

@@ -15,43 +15,40 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import demo.api.output.BookOutput;
-import demo.dto.book.BookDTO;
-import demo.service.book.BookServiceImpl;
+import demo.dto.book.AuthorDTO;
+import demo.service.book.AuthorServiceImpl;
 
 @CrossOrigin
 @RestController
-public class BookAPI {
-
+public class AuthorAPI {
 	@Autowired
-	private BookServiceImpl bookService;
+	private AuthorServiceImpl authorServiceImpl;
 	
-	@GetMapping(value = "/api/book")
-	public BookOutput showBook(@RequestParam(name = "page", required = false, defaultValue = "0") int page,
-			@RequestParam(name = "limit", required = false, defaultValue = "5") int limit,
-			@RequestParam(name = "sort", required = false, defaultValue = "ASC") String sort) {
+	@GetMapping(value = "/api/author")
+	public BookOutput showAuthor(@RequestParam(name = "page", required = false, defaultValue = "0") int page,
+			@RequestParam(name="limit", required = false, defaultValue = "5") int limit,
+			@RequestParam(name="sort", required = false, defaultValue = "ASC") String sort) {
 		Sort sortable = null;
 		sortable = Sort.by("id").ascending();
 		BookOutput result = new BookOutput();
 		result.setPage(page);
 		Pageable pageable = PageRequest.of(page, limit, sortable);
-		result.setListResult(bookService.findAll(pageable));
-		result.setTotalPage((int) Math.ceil((double) (bookService.totalItem())/limit));
+		result.setListAuthor(authorServiceImpl.findAll(pageable));
+		result.setTotalPage((int) Math.ceil((double) (authorServiceImpl.totalItem())/limit));
 		return result;
 	}
-	
-	@PostMapping(value = "/api/book")
-	public BookDTO updateBook(@RequestBody BookDTO model) {
-		return bookService.save(model);
+	@PostMapping(value = "/api/author")
+	public AuthorDTO updateAuthorDTO(@RequestBody AuthorDTO modle) {
+		return authorServiceImpl.save(modle);
 	}
 	
-	@PutMapping(value = "/api/book/{id}")
-	public BookDTO updateBook(@RequestBody BookDTO model, @PathVariable("id") long id) {
-		model.setId(id);
-		return bookService.save(model);
+	@PutMapping(value = "/api/author/{id}")
+	public AuthorDTO updateAuthorDTO(@RequestBody AuthorDTO modle, @PathVariable("id") long id) {
+		modle.setId(id);
+		return authorServiceImpl.save(modle);
 	}
-	
-	@DeleteMapping(value = "/api/book")
-	public void deleteBook(@RequestBody long[] ids) {
-		bookService.delete(ids);
+	@DeleteMapping(value = "/api/author")
+	public void deleteAuthor(@RequestBody long[] ids) {
+		authorServiceImpl.delete(ids);
 	}
 }
