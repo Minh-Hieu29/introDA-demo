@@ -1,4 +1,4 @@
-package demo.entity.book;
+package demo.entity.shoes;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,11 +10,8 @@ import javax.persistence.Table;
 import demo.entity.BaseEntity;
 
 @Entity
-@Table(name = "book_item")
-public class BookItemEntity extends BaseEntity{
-
-	@Column(name = "barcode")
-	private String barcode;
+@Table(name = "shoesitem")
+public class ShoesItemEntity extends BaseEntity{
 	
 	@Column(name = "price")
 	private float price;
@@ -23,18 +20,8 @@ public class BookItemEntity extends BaseEntity{
 	private float discount;
 	
 	@OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "book_id")
-	private BookEntity books;
-
-	
-
-	public String getBarcode() {
-		return barcode;
-	}
-
-	public void setBarcode(String barcode) {
-		this.barcode = barcode;
-	}
+    @JoinColumn(name = "shoes_id")
+	private ShoesEntity shoess;
 
 	public float getPrice() {
 		return price;
@@ -52,12 +39,12 @@ public class BookItemEntity extends BaseEntity{
 		this.discount = discount;
 	}
 
-	public BookEntity getBooks() {
-		return books;
+	public ShoesEntity getShoess() {
+		return shoess;
 	}
 
-	public void setBooks(BookEntity books) {
-		this.books = books;
+	public void setShoess(ShoesEntity shoess) {
+		this.shoess = shoess;
 	}
 	
 	

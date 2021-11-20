@@ -14,6 +14,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import demo.entity.BaseEntity;
+
 @Entity
 @Table(name = "book")
 public class BookEntity extends BaseEntity{

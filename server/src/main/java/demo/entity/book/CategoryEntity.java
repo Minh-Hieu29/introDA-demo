@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import demo.entity.BaseEntity;
+
 @Entity
 @Table(name = "category")
 public class CategoryEntity extends BaseEntity{

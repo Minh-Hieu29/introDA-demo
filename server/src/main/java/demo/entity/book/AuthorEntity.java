@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import demo.entity.BaseEntity;
+
 @Entity
 @Table(name = "author")
 public class AuthorEntity extends BaseEntity{
