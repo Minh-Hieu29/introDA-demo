@@ -1,4 +1,4 @@
-package demo.api.customer;
+package demo.api.order;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
@@ -14,43 +14,44 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import demo.api.output.CustomerOutput;
-import demo.dto.customer.CustomerDTO;
-import demo.service.customer.CustomerService;
+import demo.api.output.OrderOutput;
+import demo.dto.order.CheckDTO;
+import demo.service.order.CheckService;
 
 @CrossOrigin
 @RestController
-public class CustomerAPI {
+public class CheckAPI {
 
 	@Autowired
-	private CustomerService customerService;
+	private CheckService CheckService;
 	
-	@GetMapping(value = "/api/customer")
-	public CustomerOutput showCustomer(@RequestParam(name ="page", required = false, defaultValue = "0") int page,
+	@GetMapping(value = "/api/check")
+	public OrderOutput showCheck(@RequestParam(name ="page", required = false, defaultValue = "0") int page,
 			 @RequestParam(name="limit", required = false, defaultValue = "5") int limit,
 			 @RequestParam(name="sort", required = false, defaultValue = "ASC") String sort) {
 		Sort sortable = null;
-		sortable =Sort.by("id").ascending();
-		CustomerOutput result = new CustomerOutput();
+		sortable = Sort.by("id").ascending();
+		OrderOutput result = new OrderOutput();
 		result.setPage(page);
 		Pageable pageable = PageRequest.of(page, limit, sortable);
-		result.setListCustomer(customerService.findAll(pageable));
-		result.setTotalPage((int) Math.ceil((double) (customerService.totalItem())/limit));
+		result.setListCheck(CheckService.findAll(pageable));
+		result.setTotalPage((int) Math.ceil((double)(CheckService.totalItem())/limit));
 		return result;
 	}
 	
-	@PostMapping(value = "/api/customer")
-	public CustomerDTO createCustomer(@RequestBody CustomerDTO model) {
-		return customerService.save(model);
+	@PostMapping(value = "/api/check")
+	public CheckDTO createCheck(@RequestBody CheckDTO model) {
+		return CheckService.save(model);
 	}
 	
-	@PutMapping(value = "/api/customer/{id}")
-	public CustomerDTO updateCustomer(@RequestBody CustomerDTO model, @PathVariable("id") long id) {
-		model.setId(id);
-		return customerService.save(model);
+	@PutMapping(value = "/api/check/{id}")
+	public CheckDTO updateCheck(@RequestBody CheckDTO model, @PathVariable("id") long id) {
+		model.setAmount(id);
+		return CheckService.save(model);
 	}
-	@DeleteMapping(value = "/api/customer")
-	public void deleteCustomer(@RequestBody long[] ids) {
-		customerService.delete(ids);
+	
+	@DeleteMapping(value = "/api/check")
+	public void deleteCheck(@RequestBody long[] ids) {
+		CheckService.delete(ids);
 	}
 }

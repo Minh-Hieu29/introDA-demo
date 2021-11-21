@@ -1,12 +1,7 @@
 package demo.entity.customer;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -20,8 +15,7 @@ public class AccountEntity extends BaseEntity{
 	@Column(name = "password")
 	private String password;
 	
-	@OneToOne(mappedBy = "account", cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY, optional = false)
+	@OneToOne(mappedBy = "account")
 	private CustomerEntity customer;
 
 	public String getUsername() {

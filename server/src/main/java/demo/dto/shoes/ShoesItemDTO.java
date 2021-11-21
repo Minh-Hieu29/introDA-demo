@@ -4,7 +4,8 @@ public class ShoesItemDTO {
 	private long ID;
 	private float price;
 	private float discount;
-	private String ShoesID;
+	private long shoesID;
+	
 	
 	public long getID() {
 		return ID;
@@ -24,12 +25,14 @@ public class ShoesItemDTO {
 	public void setDiscount(float discount) {
 		this.discount = discount;
 	}
-	public String getShoesID() {
-		return ShoesID;
+	public long getShoesID() {
+		return shoesID;
 	}
-	public void setShoesID(String shoesID) {
-		ShoesID = shoesID;
+	public void setShoesID(long shoesID) {
+		this.shoesID = shoesID;
 	}
+	
+	
 	
 	
 }

@@ -15,18 +15,18 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import demo.api.output.OrderOutput;
-import demo.dto.order.PaymentDTO;
-import demo.service.order.PaymentService;
+import demo.dto.order.CashDTO;
+import demo.service.order.CashService;
 
 @CrossOrigin
 @RestController
-public class PaymentAPI {
+public class CashAPI {
 
 	@Autowired
-	private PaymentService paymentService;
+	private CashService CashService;
 	
-	@GetMapping(value = "/api/payment")
-	public OrderOutput showPayment(@RequestParam(name ="page", required = false, defaultValue = "0") int page,
+	@GetMapping(value = "/api/cash")
+	public OrderOutput showCash(@RequestParam(name ="page", required = false, defaultValue = "0") int page,
 			 @RequestParam(name="limit", required = false, defaultValue = "5") int limit,
 			 @RequestParam(name="sort", required = false, defaultValue = "ASC") String sort) {
 		Sort sortable = null;
@@ -34,24 +34,24 @@ public class PaymentAPI {
 		OrderOutput result = new OrderOutput();
 		result.setPage(page);
 		Pageable pageable = PageRequest.of(page, limit, sortable);
-		result.setListPayment(paymentService.findAll(pageable));
-		result.setTotalPage((int) Math.ceil((double)(paymentService.totalItem())/limit));
+		result.setListCash(CashService.findAll(pageable));
+		result.setTotalPage((int) Math.ceil((double)(CashService.totalItem())/limit));
 		return result;
 	}
 	
-	@PostMapping(value = "/api/payment")
-	public PaymentDTO createPayment(@RequestBody PaymentDTO model) {
-		return paymentService.save(model);
+	@PostMapping(value = "/api/cash")
+	public CashDTO createCash(@RequestBody CashDTO model) {
+		return CashService.save(model);
 	}
 	
-//	@PutMapping(value = "/api/payment/{id}")
-//	public PaymentDTO updatePayment(@RequestBody PaymentDTO model, @PathVariable("id") long id) {
-//		model.setAmount(id);
-//		return paymentService.save(model);
-//	}
+	@PutMapping(value = "/api/Cash/{id}")
+	public CashDTO updateCash(@RequestBody CashDTO model, @PathVariable("id") long id) {
+		model.setAmount(id);
+		return CashService.save(model);
+	}
 	
-	@DeleteMapping(value = "/api/payment")
-	public void deletePayment(@RequestBody long[] ids) {
-		paymentService.delete(ids);
+	@DeleteMapping(value = "/api/cash")
+	public void deleteCash(@RequestBody long[] ids) {
+		CashService.delete(ids);
 	}
 }

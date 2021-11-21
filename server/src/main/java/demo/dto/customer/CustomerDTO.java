@@ -7,7 +7,7 @@ public class CustomerDTO {
 	private long id;
 	private String phone;
 	private String sex;
-	private Date DOB;
+	private Date dob;
 	private String fullnameLastname;
 	private String accountUsername;
 	
@@ -29,11 +29,12 @@ public class CustomerDTO {
 	public void setSex(String sex) {
 		this.sex = sex;
 	}
-	public Date getDOB() {
-		return DOB;
+	
+	public Date getDob() {
+		return dob;
 	}
-	public void setDOB(Date dOB) {
-		DOB = dOB;
+	public void setDob(Date dob) {
+		this.dob = dob;
 	}
 	public String getFullnameLastname() {
 		return fullnameLastname;

@@ -4,12 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import demo.dto.customer.CustomerDTO;
+import demo.dto.customer.CustomerMemberDTO;
+import demo.dto.customer.CustomerNewDTO;
 
 public class CustomerOutput {
 
 	private int page;
 	private int totalPage;
-	private List<CustomerDTO> listCustomer = new ArrayList<>();
+	private List<CustomerNewDTO> listCustomerNew = new ArrayList<>();
+	private List<CustomerMemberDTO> listCustomerMember =  new ArrayList<>();
 	public int getPage() {
 		return page;
 	}
@@ -22,12 +25,19 @@ public class CustomerOutput {
 	public void setTotalPage(int totalPage) {
 		this.totalPage = totalPage;
 	}
-	public List<CustomerDTO> getListCustomer() {
-		return listCustomer;
+	public List<CustomerNewDTO> getListCustomerNew() {
+		return listCustomerNew;
 	}
-	public void setListCustomer(List<CustomerDTO> listCustomer) {
-		this.listCustomer = listCustomer;
+	public void setListCustomerNew(List<CustomerNewDTO> listCustomerNew) {
+		this.listCustomerNew = listCustomerNew;
 	}
+	public List<CustomerMemberDTO> getListCustomerMember() {
+		return listCustomerMember;
+	}
+	public void setListCustomerMember(List<CustomerMemberDTO> listCustomerMember) {
+		this.listCustomerMember = listCustomerMember;
+	}
+	
 	
 	
 }

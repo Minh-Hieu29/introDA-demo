@@ -31,13 +31,13 @@ public class CustomerEntity {
 	private String sex;
 	
 	@Column(name = "dob")
-	private Date DOB;
+	private Date dob;
 	
 	@ManyToOne
 	@JoinColumn(name = "fullname_lastname")
 	private FullNameEntity fullName;
 	
-	@OneToOne(fetch = FetchType.LAZY)
+	@OneToOne
     @JoinColumn(name = "account_username")
 	private AccountEntity account;
 	
@@ -68,12 +68,14 @@ public class CustomerEntity {
 		this.sex = sex;
 	}
 
-	public Date getDOB() {
-		return DOB;
+	
+
+	public Date getDob() {
+		return dob;
 	}
 
-	public void setDOB(Date dOB) {
-		DOB = dOB;
+	public void setDob(Date dob) {
+		this.dob = dob;
 	}
 
 	public FullNameEntity getFullName() {

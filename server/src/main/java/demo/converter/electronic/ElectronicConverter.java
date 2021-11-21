@@ -1,11 +1,14 @@
 package demo.converter.electronic;
 
+import org.springframework.stereotype.Component;
+
 import demo.dto.electronic.ElectronicDTO;
 import demo.entity.electronic.ElectronicEntity;
 
 /**
  * Created by Junkie on 21/11/2021.
  **/
+@Component
 public class ElectronicConverter {
     public ElectronicEntity toEntity(ElectronicDTO electronicDTO) {
         ElectronicEntity entity = new ElectronicEntity();

@@ -40,7 +40,7 @@ public class ShoesItemServiceImpl implements ShoesItemService{
 		} else {
 			shoesItemEntity = shoesItemConverter.toEntity(shoesItemDTO);
 		}
-		ShoesEntity shoesEntity = shoesRepository.findOneById(shoesItemDTO.getID());
+		ShoesEntity shoesEntity = shoesRepository.findOneByid(shoesItemDTO.getShoesID());
 		shoesItemEntity.setShoess(shoesEntity);
 		shoesItemEntity = shoesItemRepository.save(shoesItemEntity);
 		return shoesItemConverter.toDTO(shoesItemEntity);

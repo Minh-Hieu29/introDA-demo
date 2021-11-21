@@ -2,23 +2,23 @@ package demo.converter.customer;
 
 import org.springframework.stereotype.Component;
 
-import demo.dto.customer.CustomerDTO;
-import demo.entity.customer.CustomerEntity;
+import demo.dto.customer.CustomerNewDTO;
+import demo.entity.customer.CustomerNewEntity;
 
 @Component
-public class CustomerConverter {
-
-	public CustomerEntity toEntity(CustomerDTO dto) {
-		CustomerEntity entity = new CustomerEntity();
+public class CustomerNewConverter {
+	public CustomerNewEntity toEntity(CustomerNewDTO dto) {
+		CustomerNewEntity entity = new CustomerNewEntity();
 		entity.setId(dto.getId());
 		entity.setDob(dto.getDob());
 		entity.setSex(dto.getSex());
 		entity.setPhone(dto.getPhone());
+		entity.setNote(dto.getNote());
 		return entity;
 	}
 	
-	public CustomerDTO toDTO(CustomerEntity entity) {
-		CustomerDTO dto = new CustomerDTO();
+	public CustomerNewDTO toDTO(CustomerNewEntity entity) {
+		CustomerNewDTO dto = new CustomerNewDTO();
 		
 			dto.setId(entity.getId());
 		
@@ -26,14 +26,16 @@ public class CustomerConverter {
 		dto.setDob(entity.getDob());
 		dto.setSex(entity.getSex());
 		dto.setPhone(entity.getPhone());
+		dto.setNote(entity.getNote());
 		return dto;
 	}
 	
-	public CustomerEntity toEntity(CustomerDTO dto, CustomerEntity entity) {
+	public CustomerNewEntity toEntity(CustomerNewDTO dto, CustomerNewEntity entity) {
 		entity.setId(dto.getId());
 		entity.setDob(dto.getDob());
 		entity.setSex(dto.getSex());
 		entity.setPhone(dto.getPhone());
+		entity.setNote(dto.getNote());
 		return entity;
 	}
 }
