@@ -4,18 +4,18 @@ package demo.dto.electronic;
  * Created by Junkie on 21/11/2021.
  **/
 public class ElectronicItemDTO {
-    private Long id;
+    private long id;
     private String name;
     private float price;
     private String discount;
     private String barCode;
     private String electronicId;
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 

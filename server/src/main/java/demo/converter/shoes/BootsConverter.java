@@ -14,6 +14,7 @@ public class BootsConverter {
 		entity.setMaterial(dto.getMaterial());
 		entity.setModel(dto.getModel());
 		entity.setHeight(dto.getHeight());
+		entity.setImageUrl(dto.getImageUrl());
 		return entity;
 	}
 	
@@ -25,6 +26,7 @@ public class BootsConverter {
 		dto.setMaterial(entity.getMaterial());
 		dto.setModel(entity.getModel());
 		dto.setHeight(entity.getHeight());
+		dto.setImageUrl(entity.getImageUrl());
 		return dto;
 	}
 	
@@ -35,6 +37,7 @@ public class BootsConverter {
 		entity.setMaterial(dto.getMaterial());
 		entity.setModel(dto.getModel());
 		entity.setHeight(dto.getHeight());
+		entity.setImageUrl(dto.getImageUrl());
 		return entity;
 	}
 }

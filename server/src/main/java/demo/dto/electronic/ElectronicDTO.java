@@ -9,16 +9,16 @@ public class ElectronicDTO {
     private String brand;
     private float screenSize;
     private String model;
-
-    
+    private String imageUrl;
 
     public long getId() {
-		return id;
-	}
+        return id;
+    }
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
+>>>>>>> 844a9f0c7c7cea8491761b8f431501d9a63cd66d
 
 	public String getName() {
         return name;
@@ -50,5 +50,13 @@ public class ElectronicDTO {
 
     public void setModel(String model) {
         this.model = model;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }

@@ -4,6 +4,7 @@ import org.springframework.stereotype.Component;
 
 import demo.dto.electronic.ElectronicItemDTO;
 import demo.entity.electronic.ElectronicItemEntity;
+import org.springframework.stereotype.Component;
 
 /**
  * Created by Junkie on 21/11/2021.

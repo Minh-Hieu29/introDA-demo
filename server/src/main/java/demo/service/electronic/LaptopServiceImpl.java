@@ -48,8 +48,8 @@ public class LaptopServiceImpl implements LaptopService {
         List<LaptopDTO> results = new ArrayList<>();
         List<LaptopEntity> entities = laptopRepository.findAll(pageable).getContent();
         for(LaptopEntity item: entities) {
-            LaptopDTO laptopDTO = laptopConverter.toDTO(item);
-            results.add(laptopDTO);
+            LaptopDTO dto = laptopConverter.toDTO(item);
+            results.add(dto);
         }
         return results;
     }

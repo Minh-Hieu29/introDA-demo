@@ -22,6 +22,9 @@ public class ElectronicEntity extends BaseEntity {
     @Column(name = "model")
     private String model;
 
+    @Column(name = "image_url")
+    private String imageUrl;
+
     @OneToOne(mappedBy = "electronicEntity",
                 fetch = FetchType.LAZY)
     private ElectronicItemEntity electronicItemEntity;
@@ -64,5 +67,13 @@ public class ElectronicEntity extends BaseEntity {
 
     public void setElectronicItemEntity(ElectronicItemEntity electronicItemEntity) {
         this.electronicItemEntity = electronicItemEntity;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }
