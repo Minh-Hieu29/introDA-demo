@@ -24,6 +24,9 @@ public class ShoesEntity extends BaseEntity{
 	
 	@Column(name = "model")
 	private String model;
+
+	@Column(name = "image_url")
+	private String imageUrl;
 	
 	@OneToOne(mappedBy = "shoess",
             fetch = FetchType.LAZY)
@@ -68,6 +71,12 @@ public class ShoesEntity extends BaseEntity{
 	public void setShoesItem(ShoesItemEntity shoesItem) {
 		this.shoesItem = shoesItem;
 	}
-	
-	
+
+	public String getImageUrl() {
+		return imageUrl;
+	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
 }

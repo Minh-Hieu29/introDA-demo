@@ -15,6 +15,7 @@ public class ShoesConverter {
 		entity.setColor(dto.getColor());
 		entity.setMaterial(dto.getMaterial());
 		entity.setModel(dto.getModel());
+		entity.setImageUrl(dto.getImageUrl());
 		return entity;
 	}
 	
@@ -25,6 +26,7 @@ public class ShoesConverter {
 		dto.setColor(entity.getColor());
 		dto.setMaterial(entity.getMaterial());
 		dto.setModel(entity.getModel());
+		dto.setImageUrl(entity.getImageUrl());
 		return dto;
 	}
 	
@@ -34,6 +36,7 @@ public class ShoesConverter {
 		entity.setColor(dto.getColor());
 		entity.setMaterial(dto.getMaterial());
 		entity.setModel(dto.getModel());
+		entity.setImageUrl(dto.getImageUrl());
 		return entity;
 	}
 }

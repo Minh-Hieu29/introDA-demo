@@ -25,8 +25,10 @@ public class ElectronicItemServiceImpl implements ElectronicItemService {
     @Autowired
     private ElectronicItemRepository electronicItemRepository;
 
+    @Autowired
     private ElectronicConverter electronicConverter;
 
+    @Autowired
     private ElectronicItemConverter electronicItemConverter;
 
     @Override

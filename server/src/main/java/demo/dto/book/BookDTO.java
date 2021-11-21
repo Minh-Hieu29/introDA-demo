@@ -8,6 +8,7 @@ public class BookDTO extends AbstractDTO<BookDTO>{
 	private String language;
 	private String categoryID;
 	private String publisherID;
+	private String imageUrl;
 	
 	public String getIsbn() {
 		return isbn;
@@ -51,6 +52,12 @@ public class BookDTO extends AbstractDTO<BookDTO>{
 	public void setPublisherID(String publisherID) {
 		this.publisherID = publisherID;
 	}
-	
-	
+
+	public String getImageUrl() {
+		return imageUrl;
+	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
 }

@@ -34,6 +34,9 @@ public class BookEntity extends BaseEntity{
 	
 	@Column(name = "language")
 	private String language;
+
+	@Column(name = "image_url")
+	private String imageUrl;
 	
 	@OneToOne(mappedBy = "books", cascade = CascadeType.ALL,
             fetch = FetchType.LAZY, optional = false)
@@ -111,7 +114,12 @@ public class BookEntity extends BaseEntity{
 	public void setCategory(CategoryEntity category) {
 		this.category = category;
 	}
-	
-	
-	
+
+	public String getImageUrl() {
+		return imageUrl;
+	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
 }

@@ -6,7 +6,7 @@ public class ShoesDTO {
 	private String color;
 	private String material;
 	private String model;
-	
+	private String imageUrl;
 	
 	public long getId() {
 		return id;
@@ -38,6 +38,12 @@ public class ShoesDTO {
 	public void setModel(String model) {
 		this.model = model;
 	}
-	
-	
+
+	public String getImageUrl() {
+		return imageUrl;
+	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
 }

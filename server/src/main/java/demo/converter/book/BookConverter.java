@@ -15,6 +15,7 @@ public class BookConverter {
 		entity.setSummary(dto.getSummary());
 		entity.setPages(dto.getPages());
 		entity.setLanguage(dto.getLanguage());
+		entity.setImageUrl(dto.getImageUrl());
 		return entity;
 	}
 	
@@ -28,6 +29,7 @@ public class BookConverter {
 		dto.setSummary(entity.getSummary());
 		dto.setPages(entity.getPages());
 		dto.setLanguage(entity.getLanguage());
+		dto.setImageUrl(entity.getImageUrl());
 		return dto;
 	}
 	
@@ -37,6 +39,7 @@ public class BookConverter {
 		entity.setSummary(dto.getSummary());
 		entity.setPages(dto.getPages());
 		entity.setLanguage(dto.getLanguage());
+		entity.setImageUrl(dto.getImageUrl());
 		return entity;
 	}
 }

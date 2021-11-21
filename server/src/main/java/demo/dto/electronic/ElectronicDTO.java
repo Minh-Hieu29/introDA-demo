@@ -4,17 +4,18 @@ package demo.dto.electronic;
  * Created by Junkie on 21/11/2021.
  **/
 public class ElectronicDTO {
-    private Long id;
+    private long id;
     private String name;
     private String brand;
     private float screenSize;
     private String model;
+    private String imageUrl;
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -48,5 +49,13 @@ public class ElectronicDTO {
 
     public void setModel(String model) {
         this.model = model;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }
