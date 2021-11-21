@@ -9,6 +9,7 @@ public class ElectronicItemDTO {
     private float price;
     private String discount;
     private String barCode;
+    private String electronicId;
 
     public Long getId() {
         return id;
@@ -48,5 +49,13 @@ public class ElectronicItemDTO {
 
     public void setBarCode(String barCode) {
         this.barCode = barCode;
+    }
+
+    public String getElectronicId() {
+        return electronicId;
+    }
+
+    public void setElectronicId(String electronicId) {
+        this.electronicId = electronicId;
     }
 }

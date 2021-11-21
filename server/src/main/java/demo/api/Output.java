@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import demo.dto.electronic.ElectronicItemDTO;
+import demo.dto.electronic.LaptopDTO;
 import demo.dto.shoes.BootsDTO;
 import demo.dto.shoes.ShoesDTO;
 import demo.dto.shoes.ShoesItemDTO;
@@ -13,6 +14,7 @@ public class Output {
 	private int totalPage;
 	private List<BootsDTO> listBoots = new ArrayList<>();
 	private List<ShoesItemDTO> listShoesItem = new ArrayList<>();
+	private List<LaptopDTO> listLaptop = new ArrayList<>();
 	private List<ElectronicItemDTO> listElectronicItem = new ArrayList<>();
 	public int getPage() {
 		return page;
@@ -45,5 +47,13 @@ public class Output {
 	}
 	public void setListElectronicItem(List<ElectronicItemDTO> listElectronicItem) {
 		this.listElectronicItem = listElectronicItem;
+	}
+
+	public List<LaptopDTO> getListLaptop() {
+		return listLaptop;
+	}
+
+	public void setListLaptop(List<LaptopDTO> listLaptop) {
+		this.listLaptop = listLaptop;
 	}
 }
