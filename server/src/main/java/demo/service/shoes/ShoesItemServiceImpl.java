@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import demo.converter.shoes.ShoesConverter;
+import demo.converter.shoes.BootsConverter;
 import demo.converter.shoes.ShoesItemConverter;
 import demo.dto.shoes.ShoesDTO;
 import demo.dto.shoes.ShoesItemDTO;
@@ -29,13 +29,13 @@ public class ShoesItemServiceImpl implements ShoesItemService{
 	private ShoesRepository shoesRepository;
 	
 	@Autowired
-	private ShoesConverter shoesConverter;
+	private BootsConverter shoesConverter;
 
 	@Override
 	public ShoesItemDTO save(ShoesItemDTO shoesItemDTO) {
 		ShoesItemEntity shoesItemEntity = new ShoesItemEntity();
-		if(shoesItemDTO.getID() != 0) {
-			ShoesItemEntity oldShoesItemEntity = shoesItemRepository.findById(shoesItemDTO.getID()).get();
+		if(shoesItemDTO.getId() != 0) {
+			ShoesItemEntity oldShoesItemEntity = shoesItemRepository.findById(shoesItemDTO.getId()).get();
 			shoesItemEntity = shoesItemConverter.toEntity(shoesItemDTO, oldShoesItemEntity);
 		} else {
 			shoesItemEntity = shoesItemConverter.toEntity(shoesItemDTO);
@@ -63,12 +63,6 @@ public class ShoesItemServiceImpl implements ShoesItemService{
 			ShoesItemDTO ShoesItemDTO = shoesItemConverter.toDTO(item);
 			results.add(ShoesItemDTO);
 		}
-		
-		for(ShoesEntity item: entities2) {
-			ShoesDTO shoesDTO = shoesConverter.toDTO(item);
-			results1.add(shoesDTO);
-		}
-		//nốii 2 cái results xem :)))
 		return results;
 	}
 

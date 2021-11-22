@@ -1,61 +1,32 @@
 package demo.dto.electronic;
 
+import demo.dto.AbstractDTO;
+
 /**
  * Created by Junkie on 21/11/2021.
  **/
-public class ElectronicItemDTO {
-    private long id;
-    private String name;
+public class ElectronicItemDTO extends AbstractDTO<ElectronicItemDTO>{
     private float price;
-    private String discount;
-    private String barCode;
-    private String electronicId;
+    private float discount;
+    private long ElectronicId;
+	public float getPrice() {
+		return price;
+	}
+	public void setPrice(float price) {
+		this.price = price;
+	}
+	public float getDiscount() {
+		return discount;
+	}
+	public void setDiscount(float discount) {
+		this.discount = discount;
+	}
+	public long getElectronicId() {
+		return ElectronicId;
+	}
+	public void setElectronicId(long electronicId) {
+		ElectronicId = electronicId;
+	}
 
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public float getPrice() {
-        return price;
-    }
-
-    public void setPrice(float price) {
-        this.price = price;
-    }
-
-    public String getDiscount() {
-        return discount;
-    }
-
-    public void setDiscount(String discount) {
-        this.discount = discount;
-    }
-
-    public String getBarCode() {
-        return barCode;
-    }
-
-    public void setBarCode(String barCode) {
-        this.barCode = barCode;
-    }
-
-    public String getElectronicId() {
-        return electronicId;
-    }
-
-    public void setElectronicId(String electronicId) {
-        this.electronicId = electronicId;
-    }
+    
 }

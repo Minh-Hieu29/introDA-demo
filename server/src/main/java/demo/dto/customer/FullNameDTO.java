@@ -1,6 +1,8 @@
 package demo.dto.customer;
 
-public class FullNameDTO {
+import demo.dto.AbstractDTO;
+
+public class FullNameDTO extends AbstractDTO<FullNameDTO>{
 
 	private String firstName;
 	private String lastName;

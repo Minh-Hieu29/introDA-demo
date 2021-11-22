@@ -6,6 +6,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import demo.entity.BaseEntity;
+
 @Entity
 @Table(name = "address")
 public class AddressEntity extends BaseEntity{

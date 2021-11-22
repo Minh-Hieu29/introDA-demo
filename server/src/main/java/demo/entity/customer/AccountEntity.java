@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import demo.entity.BaseEntity;
+
 @Entity
 @Table(name = "account")
 public class AccountEntity extends BaseEntity{

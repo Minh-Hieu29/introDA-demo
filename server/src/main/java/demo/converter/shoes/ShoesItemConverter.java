@@ -11,7 +11,7 @@ import demo.entity.shoes.ShoesItemEntity;
 public class ShoesItemConverter {
 	public ShoesItemEntity toEntity(ShoesItemDTO dto) {
 		ShoesItemEntity entity = new ShoesItemEntity();
-		entity.setId(dto.getID());
+		entity.setId(dto.getId());
 		entity.setPrice(dto.getPrice());
 		entity.setDiscount(dto.getDiscount());
 		return entity;
@@ -19,14 +19,14 @@ public class ShoesItemConverter {
 	
 	public ShoesItemDTO toDTO(ShoesItemEntity entity) {
 		ShoesItemDTO dto = new ShoesItemDTO();
-		dto.setID(entity.getId());
+		dto.setId(entity.getId());
 		dto.setPrice(entity.getPrice());
 		dto.setDiscount(entity.getDiscount());
 		return dto;
 	}
 	
 	public ShoesItemEntity toEntity(ShoesItemDTO dto, ShoesItemEntity entity) {
-		entity.setId(dto.getID());
+		entity.setId(dto.getId());
 		entity.setPrice(dto.getPrice());
 		entity.setDiscount(dto.getDiscount());
 		return entity;

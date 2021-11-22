@@ -1,5 +1,6 @@
 package demo.api.book;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -19,39 +20,41 @@ import demo.dto.book.BookDTO;
 import demo.service.book.BookServiceImpl;
 
 @CrossOrigin
-@RestController
+@RestController()
 public class BookAPI {
 
 	@Autowired
-	private BookServiceImpl bookService;
+	private BookServiceImpl BookService;
 	
 	@GetMapping(value = "/api/book")
 	public BookOutput showBook(@RequestParam(name = "page", required = false, defaultValue = "0") int page,
-			@RequestParam(name = "limit", required = false, defaultValue = "5") int limit,
-			@RequestParam(name = "sort", required = false, defaultValue = "ASC") String sort) {
+										@RequestParam(name="limit", required = false, defaultValue = "5") int limit,
+										@RequestParam(name="sort", required = false, defaultValue = "ASC") String sort) {
 		Sort sortable = null;
 		sortable = Sort.by("id").ascending();
 		BookOutput result = new BookOutput();
 		result.setPage(page);
 		Pageable pageable = PageRequest.of(page, limit, sortable);
-		result.setListResult(bookService.findAll(pageable));
-		result.setTotalPage((int) Math.ceil((double) (bookService.totalItem())/limit));
+		result.setListResult(BookService.findAll(pageable));
+		result.setTotalPage((int) Math.ceil((double) (BookService.totalItem())/limit));
 		return result;
 	}
 	
 	@PostMapping(value = "/api/book")
 	public BookDTO updateBook(@RequestBody BookDTO model) {
-		return bookService.save(model);
+		return BookService.save(model);
 	}
 	
 	@PutMapping(value = "/api/book/{id}")
 	public BookDTO updateBook(@RequestBody BookDTO model, @PathVariable("id") long id) {
 		model.setId(id);
-		return bookService.save(model);
+		return BookService.save(model);
 	}
 	
 	@DeleteMapping(value = "/api/book")
 	public void deleteBook(@RequestBody long[] ids) {
-		bookService.delete(ids);
+		BookService.delete(ids);
 	}
+	
 }
+

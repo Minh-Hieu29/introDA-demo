@@ -9,7 +9,8 @@ import demo.entity.book.BookItemEntity;
 public class BookItemConverter {
 	public BookItemEntity toEntity(BookItemDTO dto) {
 		BookItemEntity entity = new BookItemEntity();
-		entity.setBarcode(dto.getBarcode());
+		entity.setId(dto.getId());
+		entity.setBarcode(dto.getBarCode());
 		entity.setPrice(dto.getPrice());
 		entity.setDiscount(dto.getDiscount());
 		return entity;
@@ -20,14 +21,16 @@ public class BookItemConverter {
 		if(entity.getId() != 0) {
 			dto.setId(entity.getId());
 		}
-		dto.setBarcode(entity.getBarcode());
+		dto.setBarCode(entity.getBarcode());
 		dto.setPrice(entity.getPrice());
 		dto.setDiscount(entity.getDiscount());
+
 		return dto;
 	}
 	
 	public BookItemEntity toEntity(BookItemDTO dto, BookItemEntity entity) {
-		entity.setBarcode(dto.getBarcode());
+		entity.setId(dto.getId());
+		entity.setBarcode(dto.getBarCode());
 		entity.setPrice(dto.getPrice());
 		entity.setDiscount(dto.getDiscount());
 		return entity;

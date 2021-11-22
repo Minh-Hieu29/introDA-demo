@@ -22,7 +22,7 @@ public class BookItemEntity extends BaseEntity{
 	@Column(name = "discount")
 	private float discount;
 	
-	@OneToOne(fetch = FetchType.LAZY)
+	@OneToOne
     @JoinColumn(name = "book_id")
 	private BookEntity books;
 

@@ -10,7 +10,7 @@ import demo.entity.book.BookEntity;
 public class BookConverter {
 	public BookEntity toEntity(BookDTO dto) {
 		BookEntity entity = new BookEntity();
-		entity.setIsbn(dto.getIsbn());
+		entity.setId(dto.getId());
 		entity.setTitle(dto.getTitle());
 		entity.setSummary(dto.getSummary());
 		entity.setPages(dto.getPages());
@@ -24,7 +24,8 @@ public class BookConverter {
 		if(entity.getId() != 0) {
 			dto.setId(entity.getId());
 		}
-		dto.setIsbn(entity.getIsbn());
+		dto.setCreaterDate(entity.getCreatedDate());
+		dto.setModifiedDate(entity.getModifiedDate());
 		dto.setTitle(entity.getTitle());
 		dto.setSummary(entity.getSummary());
 		dto.setPages(entity.getPages());
@@ -34,7 +35,7 @@ public class BookConverter {
 	}
 	
 	public BookEntity toEntity(BookDTO dto, BookEntity entity) {
-		entity.setIsbn(dto.getIsbn());
+		entity.setId(dto.getId());
 		entity.setTitle(dto.getTitle());
 		entity.setSummary(dto.getSummary());
 		entity.setPages(dto.getPages());

@@ -1,6 +1,8 @@
 package demo.dto.book;
 
-public class CategoryDTO extends AbstractDTO<CategoryDTO>{
+import demo.dto.AbstractDTO;
+
+public class CategoryDTO extends AbstractDTO{
 
 	private String name;
 

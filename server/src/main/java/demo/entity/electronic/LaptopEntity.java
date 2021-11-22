@@ -10,25 +10,25 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "laptop")
 public class LaptopEntity extends ElectronicEntity {
-    @Column
-    private String weight;
+    @Column(name = "card")
+    private String card;
 
-    @Column(name = "windows_version")
-    private String windowsVersion;
+    @Column(name = "cpu")
+    private String cpu;
 
-    public String getWeight() {
-        return weight;
-    }
+	public String getCard() {
+		return card;
+	}
 
-    public void setWeight(String weight) {
-        this.weight = weight;
-    }
+	public void setCard(String card) {
+		this.card = card;
+	}
 
-    public String getWindowsVersion() {
-        return windowsVersion;
-    }
+	public String getCpu() {
+		return cpu;
+	}
 
-    public void setWindowsVersion(String windowsVersion) {
-        this.windowsVersion = windowsVersion;
-    }
+	public void setCpu(String cpu) {
+		this.cpu = cpu;
+	}
 }

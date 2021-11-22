@@ -4,22 +4,14 @@ package demo.dto.electronic;
  * Created by Junkie on 21/11/2021.
  **/
 public class MobilePhoneDTO extends ElectronicDTO {
-    private String weight;
-    private String softwareVersion;
+    private String chip;
 
-    public String getWeight() {
-        return weight;
-    }
+	public String getChip() {
+		return chip;
+	}
 
-    public void setWeight(String weight) {
-        this.weight = weight;
-    }
-
-    public String getSoftwareVersion() {
-        return softwareVersion;
-    }
-
-    public void setSoftwareVersion(String softwareVersion) {
-        this.softwareVersion = softwareVersion;
-    }
+	public void setChip(String chip) {
+		this.chip = chip;
+	}
+    
 }

@@ -16,19 +16,25 @@ public class MobilePhoneConverter {
         entity.setBrand(dto.getBrand());
         entity.setScreenSize(dto.getScreenSize());
         entity.setModel(dto.getModel());
-        entity.setWeight(dto.getWeight());
+        entity.setOrigin(dto.getOrigin());
+        entity.setDescription(dto.getDescription());
         entity.setImageUrl(dto.getImageUrl());
+        entity.setRam(dto.getRam());
+        dto.setCreaterDate(entity.getCreatedDate());
+        dto.setModifiedDate(entity.getModifiedDate());
         return entity;
     }
 
     public MobilePhoneEntity toEntity(MobilePhoneDTO dto, MobilePhoneEntity entity) {
-        entity.setId(dto.getId());
+    	entity.setId(dto.getId());
         entity.setName(dto.getName());
         entity.setBrand(dto.getBrand());
         entity.setScreenSize(dto.getScreenSize());
         entity.setModel(dto.getModel());
-        entity.setWeight(dto.getWeight());
+        entity.setOrigin(dto.getOrigin());
+        entity.setDescription(dto.getDescription());
         entity.setImageUrl(dto.getImageUrl());
+        entity.setRam(dto.getRam());
         return entity;
     }
 
@@ -39,8 +45,10 @@ public class MobilePhoneConverter {
         dto.setBrand(entity.getBrand());
         dto.setScreenSize(entity.getScreenSize());
         dto.setModel(entity.getModel());
-        dto.setWeight(entity.getWeight());
+        dto.setOrigin(entity.getOrigin());
+        dto.setDescription(entity.getDescription());
         dto.setImageUrl(entity.getImageUrl());
+        dto.setRam(entity.getRam());
         return dto;
     }
 }

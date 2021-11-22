@@ -1,6 +1,8 @@
 package demo.dto.customer;
 
-public class AccountDTO {
+import demo.dto.AbstractDTO;
+
+public class AccountDTO extends AbstractDTO<AccountDTO>{
 
 	private String username;
 	private String password;

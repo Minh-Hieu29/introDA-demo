@@ -10,9 +10,11 @@ import org.springframework.stereotype.Service;
 import demo.converter.customer.CustomerMemberConverter;
 import demo.dto.customer.CustomerMemberDTO;
 import demo.entity.customer.AccountEntity;
+import demo.entity.customer.AddressEntity;
 import demo.entity.customer.CustomerMemberEntity;
 import demo.entity.customer.FullNameEntity;
 import demo.repository.customer.AccountRepository;
+import demo.repository.customer.AddressRepository;
 import demo.repository.customer.CustomerMemberRepository;
 import demo.repository.customer.FullnameRepository;
 
@@ -30,6 +32,7 @@ public class CustomerMemberServiceImpl implements CustomerMemberService{
 	
 	@Autowired
 	private CustomerMemberConverter customerMemberConverter;
+	
 
 
 	@Override
@@ -66,10 +69,12 @@ public class CustomerMemberServiceImpl implements CustomerMemberService{
 		} else {
 			CustomerMemberEntity = customerMemberConverter.toEntity(CustomerMemberDTO);
 		}
-		AccountEntity accountEntity = accountRepository.findOneByUsername(CustomerMemberDTO.getAccountUsername());
+		AccountEntity accountEntity = accountRepository.findOneById(CustomerMemberDTO.getAccountId());
 		CustomerMemberEntity.setAccount(accountEntity);
-		FullNameEntity fullNameEntity = fullnameRepository.findOneByLastName(CustomerMemberDTO.getFullnameLastname());
+		FullNameEntity fullNameEntity = fullnameRepository.findOneById(CustomerMemberDTO.getFullNameId());
 		CustomerMemberEntity.setFullName(fullNameEntity);
+//		AddressEntity addressEntity = addressRepository.findById(CustomerMemberDTO.getAddressId());
+//		CustomerMemberEntity.setAddress(addressEntity);
 		CustomerMemberEntity = customerMemberRepository.save(CustomerMemberEntity);
 		return customerMemberConverter.toDTO(CustomerMemberEntity);
 	}

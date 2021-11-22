@@ -8,16 +8,18 @@ import javax.persistence.Table;
 @Table(name = "boots")
 public class BootsEntity extends ShoesEntity{
 	
-	@Column(name = "height")
-	private int height;
+	@Column(name = "model")
+	private String model;
 
-	public int getHeight() {
-		return height;
+	public String getModel() {
+		return model;
 	}
 
-	public void setHeight(int height) {
-		this.height = height;
+	public void setModel(String model) {
+		this.model = model;
 	}
+
+	
 	
 	
 }

@@ -4,9 +4,7 @@ import demo.entity.BaseEntity;
 
 import javax.persistence.*;
 
-/**
- * Created by Junkie on 21/11/2021.
- **/
+
 @Entity
 @Table(name = "electronic")
 public class ElectronicEntity extends BaseEntity {
@@ -17,13 +15,22 @@ public class ElectronicEntity extends BaseEntity {
     private String brand;
 
     @Column(name = "screen_size")
-    private float screenSize;
+    private String screenSize;
 
     @Column(name = "model")
     private String model;
+    
+    @Column(name = "origin")
+    private String origin;
+    
+    @Column(name = "description")
+    private String description;
 
     @Column(name = "image_url")
     private String imageUrl;
+    
+    @Column(name = "ram")
+    private String ram;
 
     @OneToOne(mappedBy = "electronicEntity",
                 fetch = FetchType.LAZY)
@@ -45,15 +52,17 @@ public class ElectronicEntity extends BaseEntity {
         this.brand = brand;
     }
 
-    public float getScreenSize() {
-        return screenSize;
-    }
+    
 
-    public void setScreenSize(float screenSize) {
-        this.screenSize = screenSize;
-    }
+    public String getScreenSize() {
+		return screenSize;
+	}
 
-    public String getModel() {
+	public void setScreenSize(String screenSize) {
+		this.screenSize = screenSize;
+	}
+
+	public String getModel() {
         return model;
     }
 
@@ -76,4 +85,30 @@ public class ElectronicEntity extends BaseEntity {
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }
+
+	public String getOrigin() {
+		return origin;
+	}
+
+	public void setOrigin(String origin) {
+		this.origin = origin;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getRam() {
+		return ram;
+	}
+
+	public void setRam(String ram) {
+		this.ram = ram;
+	}
+    
+    
 }

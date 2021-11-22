@@ -10,6 +10,7 @@ import demo.dto.book.BookDTO;
 
 public interface BookServiceImpl {
 	BookDTO save(BookDTO bookDTO);
+//	List<BookDTO> saveAll(BookDTO bookDTO);
 	void delete(long[] ids);
 	List<BookDTO> findAll(Pageable pageable);
 	int totalItem();

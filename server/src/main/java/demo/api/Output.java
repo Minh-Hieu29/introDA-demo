@@ -3,23 +3,23 @@ package demo.api;
 import java.util.ArrayList;
 import java.util.List;
 
-import demo.dto.electronic.AirConditionDTO;
 import demo.dto.electronic.ElectronicItemDTO;
 import demo.dto.electronic.LaptopDTO;
 import demo.dto.electronic.MobilePhoneDTO;
 import demo.dto.shoes.BootsDTO;
 import demo.dto.shoes.ShoesDTO;
 import demo.dto.shoes.ShoesItemDTO;
+import demo.dto.shoes.SneakersDTO;
 
 public class Output {
 	private int page;
 	private int totalPage;
 	private List<BootsDTO> listBoots = new ArrayList<>();
+	private List<SneakersDTO> listSneakers = new ArrayList<>();
 	private List<ShoesItemDTO> listShoesItem = new ArrayList<>();
 	private List<LaptopDTO> listLaptop = new ArrayList<>();
 	private List<ElectronicItemDTO> listElectronicItem = new ArrayList<>();
 	private List<MobilePhoneDTO> listMobilePhone = new ArrayList<>();
-	private List<AirConditionDTO> listAirCondition = new ArrayList<>();
 	public int getPage() {
 		return page;
 	}
@@ -69,11 +69,12 @@ public class Output {
 		this.listMobilePhone = listMobilePhone;
 	}
 
-	public List<AirConditionDTO> getListAirCondition() {
-		return listAirCondition;
+	public List<SneakersDTO> getListSneakers() {
+		return listSneakers;
 	}
-
-	public void setListAirCondition(List<AirConditionDTO> listAirCondition) {
-		this.listAirCondition = listAirCondition;
+	public void setListSneakers(List<SneakersDTO> listSneakers) {
+		this.listSneakers = listSneakers;
 	}
+	
+	
 }

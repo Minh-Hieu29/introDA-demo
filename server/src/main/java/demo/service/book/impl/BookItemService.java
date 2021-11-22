@@ -37,7 +37,7 @@ public class BookItemService implements BookItemServiceImpl{
 		} else {
 			bookItemEntity = bookItemConverter.toEntity(bookItemDTO);
 		}
-		BookEntity bookEntity = bookRepository.findOneByIsbn(bookItemDTO.getBookID());
+		BookEntity bookEntity = bookRepository.findOneById(bookItemDTO.getBookID());
 		bookItemEntity.setBooks(bookEntity);
 		bookItemEntity = bookItemRepository.save(bookItemEntity);
 		return bookItemConverter.toDTO(bookItemEntity);

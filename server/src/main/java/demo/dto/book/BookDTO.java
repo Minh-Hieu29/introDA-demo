@@ -1,21 +1,23 @@
 package demo.dto.book;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import demo.dto.AbstractDTO;
+
+
 public class BookDTO extends AbstractDTO<BookDTO>{
-	private String isbn;
+	
 	private String title;
 	private String summary;
 	private int pages;
 	private String language;
-	private String categoryID;
-	private String publisherID;
+	private long categoryID;
+	private long publisherID;
+//	private List<Long> authorID;
 	private String imageUrl;
 	
-	public String getIsbn() {
-		return isbn;
-	}
-	public void setIsbn(String isbn) {
-		this.isbn = isbn;
-	}
+	
 	public String getTitle() {
 		return title;
 	}
@@ -40,19 +42,25 @@ public class BookDTO extends AbstractDTO<BookDTO>{
 	public void setLanguage(String language) {
 		this.language = language;
 	}
-	public String getCategoryID() {
+	
+	public long getCategoryID() {
 		return categoryID;
 	}
-	public void setCategoryID(String categoryID) {
+	public void setCategoryID(long categoryID) {
 		this.categoryID = categoryID;
 	}
-	public String getPublisherID() {
+	public long getPublisherID() {
 		return publisherID;
 	}
-	public void setPublisherID(String publisherID) {
+	public void setPublisherID(long publisherID) {
 		this.publisherID = publisherID;
 	}
-
+//	public List<Long> getAuthorID() {
+//		return authorID;
+//	}
+//	public void setAuthorID(List<Long> authorID) {
+//		this.authorID = authorID;
+//	}
 	public String getImageUrl() {
 		return imageUrl;
 	}

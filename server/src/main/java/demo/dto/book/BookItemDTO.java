@@ -1,17 +1,18 @@
 package demo.dto.book;
 
+import demo.dto.AbstractDTO;
 
-
-public class BookItemDTO extends AbstractDTO<BookItemDTO> {
-	private String barcode;
+public class BookItemDTO extends AbstractDTO {
+	private String barCode;
 	private float price;
 	private float discount;
-	private String bookID;
-	public String getBarcode() {
-		return barcode;
+	private long bookID;
+	
+	public String getBarCode() {
+		return barCode;
 	}
-	public void setBarcode(String barcode) {
-		this.barcode = barcode;
+	public void setBarCode(String barCode) {
+		this.barCode = barCode;
 	}
 	public float getPrice() {
 		return price;
@@ -25,12 +26,13 @@ public class BookItemDTO extends AbstractDTO<BookItemDTO> {
 	public void setDiscount(float discount) {
 		this.discount = discount;
 	}
-	public String getBookID() {
+	public long getBookID() {
 		return bookID;
 	}
-	public void setBookID(String bookID) {
+	public void setBookID(long bookID) {
 		this.bookID = bookID;
 	}
+	
 	
 	
 }

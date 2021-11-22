@@ -20,9 +20,8 @@ public class CustomerMemberConverter {
 	
 	public CustomerMemberDTO toDTO(CustomerMemberEntity entity) {
 		CustomerMemberDTO dto = new CustomerMemberDTO();
-		
-			dto.setId(entity.getId());
-		
+		dto.setCreaterDate(entity.getCreatedDate());
+		dto.setModifiedDate(entity.getModifiedDate());		
 		dto.setId(entity.getId());
 		dto.setDob(entity.getDob());
 		dto.setSex(entity.getSex());

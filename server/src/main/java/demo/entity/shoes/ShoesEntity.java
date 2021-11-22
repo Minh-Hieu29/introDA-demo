@@ -13,8 +13,14 @@ import demo.entity.BaseEntity;
 @Table(name = "shoes")
 public class ShoesEntity extends BaseEntity{
 
+	@Column(name = "name")
+	private String name;
+	
 	@Column(name = "size")
-	private int size;
+	private String size;
+	
+	@Column(name = "brand")
+	private String brand;
 	
 	@Column(name = "color")
 	private String color;
@@ -22,21 +28,26 @@ public class ShoesEntity extends BaseEntity{
 	@Column(name = "material")
 	private String material;
 	
-	@Column(name = "model")
-	private String model;
+	@Column(name = "origin")
+	private String origin;
 
 	@Column(name = "image_url")
 	private String imageUrl;
+	
+	@Column(name = "description")
+	private String description;
 	
 	@OneToOne(mappedBy = "shoess",
             fetch = FetchType.LAZY)
 	private ShoesItemEntity shoesItem;
 
-	public int getSize() {
+	
+
+	public String getSize() {
 		return size;
 	}
 
-	public void setSize(int size) {
+	public void setSize(String size) {
 		this.size = size;
 	}
 
@@ -56,12 +67,12 @@ public class ShoesEntity extends BaseEntity{
 		this.material = material;
 	}
 
-	public String getModel() {
-		return model;
+	public String getOrigin() {
+		return origin;
 	}
 
-	public void setModel(String model) {
-		this.model = model;
+	public void setOrigin(String origin) {
+		this.origin = origin;
 	}
 
 	public ShoesItemEntity getShoesItem() {
@@ -79,4 +90,30 @@ public class ShoesEntity extends BaseEntity{
 	public void setImageUrl(String imageUrl) {
 		this.imageUrl = imageUrl;
 	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getBrand() {
+		return brand;
+	}
+
+	public void setBrand(String brand) {
+		this.brand = brand;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	
+	
 }

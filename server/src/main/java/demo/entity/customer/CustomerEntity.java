@@ -16,13 +16,12 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import demo.entity.BaseEntity;
+
 @Entity
 @Table(name = "customer")
-public class CustomerEntity {
+public class CustomerEntity extends BaseEntity{
 
-	@Id  //primary key + not null
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
 	
 	@Column(name = "phone")
 	private String phone;
@@ -44,13 +43,6 @@ public class CustomerEntity {
 	@OneToMany(mappedBy = "customer")
 	private List<AddressEntity> address = new ArrayList<>();
 
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
 
 	public String getPhone() {
 		return phone;

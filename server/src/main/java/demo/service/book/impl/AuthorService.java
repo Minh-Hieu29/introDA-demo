@@ -17,29 +17,28 @@ import demo.service.book.AuthorServiceImpl;
 public class AuthorService implements AuthorServiceImpl{
 
 	@Autowired
-	private AuthorRepository authorRepository;
+	private AuthorRepository AuthorRepository;
 	
 	@Autowired
-	private AuthorConverter authorConverter;
-	
+	private AuthorConverter AuthorConverter;
 	
 	@Override
 	public AuthorDTO save(AuthorDTO AuthorDTO) {
-		AuthorEntity authorEntity = new AuthorEntity();
+		AuthorEntity AuthorEntity = new AuthorEntity();
 		if(AuthorDTO.getId() != 0) {
-			AuthorEntity oldAuthorEntity = authorRepository.findById(AuthorDTO.getId()).get();
-			authorEntity = authorConverter.toEntity(AuthorDTO, oldAuthorEntity);
+			AuthorEntity oldAuthorEntity = AuthorRepository.findById(AuthorDTO.getId()).get();
+			AuthorEntity = AuthorConverter.toEntity(AuthorDTO, oldAuthorEntity);
 		} else {
-			authorEntity = authorConverter.toEntity(AuthorDTO);
+			AuthorEntity = AuthorConverter.toEntity(AuthorDTO);
 		}
-		authorEntity = authorRepository.save(authorEntity);
-		return authorConverter.toDTO(authorEntity);
+		AuthorEntity = AuthorRepository.save(AuthorEntity);
+		return AuthorConverter.toDTO(AuthorEntity);
 	}
 
 	@Override
 	public void delete(long[] ids) {
 		for(long item: ids) {
-			authorRepository.deleteById(item);
+			AuthorRepository.deleteById(item);
 		}
 		
 	}
@@ -47,9 +46,9 @@ public class AuthorService implements AuthorServiceImpl{
 	@Override
 	public List<AuthorDTO> findAll(Pageable pageable) {
 		List<AuthorDTO> results = new ArrayList<>();
-		List<AuthorEntity> entities = authorRepository.findAll(pageable).getContent();
+		List<AuthorEntity> entities = AuthorRepository.findAll(pageable).getContent();
 		for(AuthorEntity item: entities) {
-			AuthorDTO AuthorDTO = authorConverter.toDTO(item);
+			AuthorDTO AuthorDTO = AuthorConverter.toDTO(item);
 			results.add(AuthorDTO);
 		}
 		return results;

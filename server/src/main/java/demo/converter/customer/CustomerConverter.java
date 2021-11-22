@@ -19,13 +19,12 @@ public class CustomerConverter {
 	
 	public CustomerDTO toDTO(CustomerEntity entity) {
 		CustomerDTO dto = new CustomerDTO();
-		
-			dto.setId(entity.getId());
-		
 		dto.setId(entity.getId());
 		dto.setDob(entity.getDob());
 		dto.setSex(entity.getSex());
 		dto.setPhone(entity.getPhone());
+		dto.setCreaterDate(entity.getCreatedDate());
+		dto.setModifiedDate(entity.getModifiedDate());
 		return dto;
 	}
 	

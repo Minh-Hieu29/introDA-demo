@@ -4,22 +4,20 @@ package demo.dto.electronic;
  * Created by Junkie on 21/11/2021.
  **/
 public class LaptopDTO extends ElectronicDTO {
-    private String weight;
-    private String windowsVersion;
+    private String cpu;
+    private String card;
+	public String getCpu() {
+		return cpu;
+	}
+	public void setCpu(String cpu) {
+		this.cpu = cpu;
+	}
+	public String getCard() {
+		return card;
+	}
+	public void setCard(String card) {
+		this.card = card;
+	}
 
-    public String getWeight() {
-        return weight;
-    }
-
-    public void setWeight(String weight) {
-        this.weight = weight;
-    }
-
-    public String getWindowsVersion() {
-        return windowsVersion;
-    }
-
-    public void setWindowsVersion(String windowsVersion) {
-        this.windowsVersion = windowsVersion;
-    }
+    
 }

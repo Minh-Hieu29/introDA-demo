@@ -1,22 +1,19 @@
 package demo.dto.customer;
 
 import java.util.Date;
+import java.util.List;
 
-public class CustomerDTO {
+import demo.dto.AbstractDTO;
 
-	private long id;
+public class CustomerDTO extends AbstractDTO<CustomerDTO>{
+
 	private String phone;
 	private String sex;
 	private Date dob;
-	private String fullnameLastname;
-	private String accountUsername;
+	private long accountId;
+	private long fullNameId;
+	private List<Long> addressId;
 	
-	public long getId() {
-		return id;
-	}
-	public void setId(long id) {
-		this.id = id;
-	}
 	public String getPhone() {
 		return phone;
 	}
@@ -36,17 +33,24 @@ public class CustomerDTO {
 	public void setDob(Date dob) {
 		this.dob = dob;
 	}
-	public String getFullnameLastname() {
-		return fullnameLastname;
+	public long getAccountId() {
+		return accountId;
 	}
-	public void setFullnameLastname(String fullnameLastname) {
-		this.fullnameLastname = fullnameLastname;
+	public void setAccountId(long accountId) {
+		this.accountId = accountId;
 	}
-	public String getAccountUsername() {
-		return accountUsername;
+	public long getFullNameId() {
+		return fullNameId;
 	}
-	public void setAccountUsername(String accountUsername) {
-		this.accountUsername = accountUsername;
+	public void setFullNameId(long fullNameId) {
+		this.fullNameId = fullNameId;
 	}
+	public List<Long> getAddressId() {
+		return addressId;
+	}
+	public void setAddressId(List<Long> addressId) {
+		this.addressId = addressId;
+	}
+	
 	
 }

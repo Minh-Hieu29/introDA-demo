@@ -1,6 +1,6 @@
 package demo.service.electronic;
 
-import demo.converter.electronic.ElectronicConverter;
+
 import demo.converter.electronic.ElectronicItemConverter;
 import demo.dto.electronic.ElectronicItemDTO;
 import demo.entity.electronic.ElectronicEntity;
@@ -24,9 +24,6 @@ public class ElectronicItemServiceImpl implements ElectronicItemService {
 
     @Autowired
     private ElectronicItemRepository electronicItemRepository;
-
-    @Autowired
-    private ElectronicConverter electronicConverter;
 
     @Autowired
     private ElectronicItemConverter electronicItemConverter;

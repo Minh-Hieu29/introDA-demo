@@ -1,5 +1,7 @@
 package demo.dto.book;
 
+import demo.dto.AbstractDTO;
+
 public class AuthorDTO extends AbstractDTO<AuthorDTO>{
 
 	private String name;

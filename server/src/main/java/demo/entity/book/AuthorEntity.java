@@ -20,7 +20,7 @@ public class AuthorEntity extends BaseEntity{
 	@Column(name = "biography")
 	private String biography;
 	
-	@ManyToMany(mappedBy = "authors")
+	@ManyToMany
 	private List<BookEntity> books = new ArrayList<>();
 
 	public String getName() {

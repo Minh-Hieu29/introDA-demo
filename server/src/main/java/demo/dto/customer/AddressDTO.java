@@ -1,6 +1,8 @@
 package demo.dto.customer;
 
-public class AddressDTO {
+import demo.dto.AbstractDTO;
+
+public class AddressDTO extends AbstractDTO<AddressDTO>{
 
 	private int number;
 	private String street;

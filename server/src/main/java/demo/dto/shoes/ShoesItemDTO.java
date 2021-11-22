@@ -1,18 +1,13 @@
 package demo.dto.shoes;
 
-public class ShoesItemDTO {
-	private long ID;
+import demo.dto.AbstractDTO;
+
+public class ShoesItemDTO extends AbstractDTO<ShoesItemDTO>{
+	
 	private float price;
 	private float discount;
 	private long shoesID;
 	
-	
-	public long getID() {
-		return ID;
-	}
-	public void setID(long iD) {
-		ID = iD;
-	}
 	public float getPrice() {
 		return price;
 	}

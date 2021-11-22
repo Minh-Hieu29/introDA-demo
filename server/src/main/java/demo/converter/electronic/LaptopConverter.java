@@ -16,21 +16,23 @@ public class LaptopConverter {
         entity.setBrand(dto.getBrand());
         entity.setScreenSize(dto.getScreenSize());
         entity.setModel(dto.getModel());
-        entity.setWeight(dto.getWeight());
-        entity.setWindowsVersion(dto.getWindowsVersion());
+        entity.setOrigin(dto.getOrigin());
+        entity.setDescription(dto.getDescription());
         entity.setImageUrl(dto.getImageUrl());
+        entity.setRam(dto.getRam());
         return entity;
     }
 
     public LaptopEntity toEntity(LaptopDTO dto, LaptopEntity entity) {
-        entity.setId(dto.getId());
+    	entity.setId(dto.getId());
         entity.setName(dto.getName());
         entity.setBrand(dto.getBrand());
         entity.setScreenSize(dto.getScreenSize());
         entity.setModel(dto.getModel());
-        entity.setWeight(dto.getWeight());
-        entity.setWindowsVersion(dto.getWindowsVersion());
+        entity.setOrigin(dto.getOrigin());
+        entity.setDescription(dto.getDescription());
         entity.setImageUrl(dto.getImageUrl());
+        entity.setRam(dto.getRam());
         return entity;
     }
 
@@ -41,9 +43,12 @@ public class LaptopConverter {
         dto.setBrand(entity.getBrand());
         dto.setScreenSize(entity.getScreenSize());
         dto.setModel(entity.getModel());
-        dto.setWeight(entity.getWeight());
-        dto.setWindowsVersion(entity.getWindowsVersion());
+        dto.setOrigin(entity.getOrigin());
+        dto.setDescription(entity.getDescription());
         dto.setImageUrl(entity.getImageUrl());
+        dto.setRam(entity.getRam());
+        dto.setCreaterDate(entity.getCreatedDate());
+        dto.setModifiedDate(entity.getModifiedDate());
         return dto;
     }
 }

@@ -66,9 +66,9 @@ public class CustomerNewServiceImpl implements CustomerNewService{
 		} else {
 			customerNewEntity = customerNewConverter.toEntity(customerNewDTO);
 		}
-		AccountEntity accountEntity = accountRepository.findOneByUsername(customerNewDTO.getAccountUsername());
+		AccountEntity accountEntity = accountRepository.findOneById(customerNewDTO.getAccountId());
 		customerNewEntity.setAccount(accountEntity);
-		FullNameEntity fullNameEntity = fullnameRepository.findOneByLastName(customerNewDTO.getFullnameLastname());
+		FullNameEntity fullNameEntity = fullnameRepository.findOneById(customerNewDTO.getFullNameId());
 		customerNewEntity.setFullName(fullNameEntity);
 		customerNewEntity = customerNewRepository.save(customerNewEntity);
 		return customerNewConverter.toDTO(customerNewEntity);

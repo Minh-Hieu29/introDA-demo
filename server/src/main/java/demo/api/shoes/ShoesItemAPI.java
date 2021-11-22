@@ -46,7 +46,7 @@ public class ShoesItemAPI {
 	
 	@PutMapping(value = "/api/shoes-item/{id}")
 	public ShoesItemDTO updateShoesItem(@RequestBody ShoesItemDTO model, @PathVariable("id") long id) {
-		model.setID(id);
+		model.setId(id);
 		return shoesItemService.save(model);
 	}
 	

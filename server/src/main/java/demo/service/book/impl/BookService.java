@@ -46,15 +46,14 @@ public class BookService implements BookServiceImpl {
 		} else {
 			bookEntity = bookConverter.toEntity(bookDTO);
 		}
-		AuthorEntity authorEntity = authorRepository.findOneById(bookDTO.getId());
-		CategoryEntity categoryEntity = categoryRepository.findOneById(bookDTO.getId());
-		PublisherEntity publisherEntity = publisherRepository.findOneById(bookDTO.getId());
+//		AuthorEntity authorEntity = (AuthorEntity) authorRepository.findAllById(bookDTO.getAuthorID());
+		CategoryEntity categoryEntity = categoryRepository.findOneById(bookDTO.getCategoryID());
+		PublisherEntity publisherEntity = publisherRepository.findOneById(bookDTO.getPublisherID());
 		bookEntity.setPublisher(publisherEntity);
 		bookEntity.setCategory(categoryEntity);
 //		bookEntity.setAuthors(authorEntity);
 		bookEntity = bookRepository.save(bookEntity);
-		return bookConverter.toDTO(bookEntity);
-		
+		return bookConverter.toDTO(bookEntity);	
 	}
 
 	@Override

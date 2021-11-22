@@ -20,9 +20,6 @@ import demo.entity.BaseEntity;
 @Table(name = "book")
 public class BookEntity extends BaseEntity{
 	
-	@Column(name = "isbn")
-	private String isbn;
-	
 	@Column(name = "title")
 	private String title;
 	
@@ -38,8 +35,8 @@ public class BookEntity extends BaseEntity{
 	@Column(name = "image_url")
 	private String imageUrl;
 	
-	@OneToOne(mappedBy = "books", cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY, optional = false)
+	@OneToOne(mappedBy = "books",
+			fetch = FetchType.LAZY)
 	private BookItemEntity bookItems;
 	
 	@ManyToOne
@@ -56,13 +53,6 @@ public class BookEntity extends BaseEntity{
 			inverseJoinColumns = @JoinColumn(name = "author_id"))
 	private List<AuthorEntity> authors = new ArrayList<>();
 	
-	
-	public String getIsbn() {
-		return isbn;
-	}
-	public void setIsbn(String isbn) {
-		this.isbn = isbn;
-	}
 	
 	public String getTitle() {
 		return title;
@@ -99,8 +89,8 @@ public class BookEntity extends BaseEntity{
 	public List<AuthorEntity> getAuthors() {
 		return authors;
 	}
-	public void setAuthors(List<AuthorEntity> authors) {
-		this.authors = authors;
+	public void setAuthors(AuthorEntity authorEntity) {
+		this.authors = (List<AuthorEntity>) authorEntity;
 	}
 	public PublisherEntity getPublisher() {
 		return publisher;
