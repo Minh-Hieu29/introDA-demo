@@ -1,12 +1,14 @@
 import React from 'react';
 import { Button } from 'antd';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { delProduct, raiseProduct, reduceProduct } from '../../Product/productSlide';
 const CartIteam = (items = {} , handleAdd = () => {}) => {
     const dispatch = useDispatch()
+    const productCart = useSelector(state => state.products)
     const handleDelItem = (items) => {
-        const actionDel = delProduct(items)
-        dispatch(actionDel)
+        console.log("delll" ,{items ,productCart})
+        const newState = productCart.indexOf(items)
+        dispatch(delProduct(newState))
     }
 
     const handleRaise = (items) => {
@@ -20,7 +22,7 @@ const CartIteam = (items = {} , handleAdd = () => {}) => {
     }
     
     return (
-        <div style = {{display : 'flex' , margin : '30px 0px'}}>
+        <div style = {{display : 'flex' , margin : '30px 0px' ,backgroundColor : "#999999" ,borderRadius : '7px'}}>
             <div style={{ display: 'flex', flex: '1', justifyContent: 'space-around' }}>
                 <div>
                     <img src={items.items.image} style={{ maxWidth: '80px', maxHeight: '100px' }} />

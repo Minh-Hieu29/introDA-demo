@@ -4,18 +4,21 @@ const product = createSlice({
     name: 'product',
     initialState: [{
         id : 0,
-        quality: 0
+        quality: 0,
+        loading : false
     }],
     reducers: {
+        changeLoad : (state ,action) => {
+            state[0].loading = true
+        },
         addProduct: (state, action) => {
             console.log("add" ,state)
             state.push(action.payload)
             state[0].quality = state[0].quality + 1
         },
         delProduct : (state , {payload}) => {
-            const remove = payload.id
-            console.log("12121" , remove)
-            state = state.filter(state => state.id !== remove)
+            state.splice(payload ,1)
+            state[0].quality = state[0].quality -1
         },
         raiseProduct : (state , {payload}) => {
             state = state.map((state , key) => {
@@ -39,5 +42,5 @@ const product = createSlice({
 })
 
 const { reducer, actions } = product
-export const { addProduct ,delProduct,raiseProduct , reduceProduct } = actions
+export const { addProduct ,delProduct,raiseProduct , reduceProduct ,changeLoad } = actions
 export default reducer

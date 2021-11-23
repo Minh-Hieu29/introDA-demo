@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button } from 'antd';
 import { useSelector } from 'react-redux';
 import CartIteam from './CartItem';
+import { NavLink } from 'react-router-dom';
 const Cart = () => {
 
     const items = {
@@ -15,27 +16,26 @@ const Cart = () => {
     }
     const productCart = useSelector(state => state.products)
     var total = 0
-    const handleAdd = (data) => {
-        console.log("data", data)
-    }
-
+    // const handleAdd = (data) => {
+    //     console.log("data", data)
+    // }
     const element = productCart.map((item, key) => {
         if (key > 0) {
             total = total + item.price * item.qua
-            return <CartIteam items={item} handleAdd={(data) => console.log("data", data)} />
+            return <CartIteam items={item} />
         }
     })
     console.log("total", total)
     return (
-        <div style={{ backgroundColor: "#EEEEEE", borderRadius: '5px', maxWidth: '70%', margin: '0 auto' }}>
+        <div style={{ backgroundColor: "#EEEEEE", borderRadius: '5px', maxWidth: '80%', margin: '0 auto' }}>
             {element}
             <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
                 <div>
                     {total}
                 </div>
-                <Button>
-                    Mua hàng
-                </Button>
+                <NavLink to="/checkout" style={{textDecoration : 'none' ,color : 'black' ,backgroundColor : 'pink' , borderRadius : '5px'}}>
+                    Mua hang
+                </NavLink>
             </div>
         </div>
     );
