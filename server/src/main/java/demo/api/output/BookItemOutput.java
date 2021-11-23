@@ -8,7 +8,7 @@ import demo.dto.book.BookItemDTO;
 public class BookItemOutput {
 	private int page;
 	private int totalPage;
-	private List<BookItemDTO> listResult = new ArrayList<>();
+	private List<BookItemDTO> listBookItem = new ArrayList<>();
 	
 	public int getPage() {
 		return page;
@@ -22,11 +22,12 @@ public class BookItemOutput {
 	public void setTotalPage(int totalPage) {
 		this.totalPage = totalPage;
 	}
-	public List<BookItemDTO> getListResult() {
-		return listResult;
-	}
-	public void setListResult(List<BookItemDTO> listResult) {
-		this.listResult = listResult;
+
+	public List<BookItemDTO> getListBookItem() {
+		return listBookItem;
 	}
 
+	public void setListBookItem(List<BookItemDTO> listBookItem) {
+		this.listBookItem = listBookItem;
+	}
 }

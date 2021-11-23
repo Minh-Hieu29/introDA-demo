@@ -35,7 +35,7 @@ public class BookAPI {
 		BookOutput result = new BookOutput();
 		result.setPage(page);
 		Pageable pageable = PageRequest.of(page, limit, sortable);
-		result.setListResult(BookService.findAll(pageable));
+		result.setListBook(BookService.findAll(pageable));
 		result.setTotalPage((int) Math.ceil((double) (BookService.totalItem())/limit));
 		return result;
 	}

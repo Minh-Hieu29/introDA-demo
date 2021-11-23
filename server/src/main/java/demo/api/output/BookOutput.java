@@ -11,7 +11,7 @@ import demo.dto.book.PublisherDTO;
 public class BookOutput {
 	private int page;
 	private int totalPage;
-	private List<BookDTO> listResult = new ArrayList<>();
+	private List<BookDTO> listBook = new ArrayList<>();
 	private List<CategoryDTO> listCategory = new ArrayList<>();
 	private List<PublisherDTO> listPublisher = new ArrayList<>();
 	private List<AuthorDTO> listAuthor = new ArrayList<>();
@@ -27,12 +27,6 @@ public class BookOutput {
 	}
 	public void setTotalPage(int totalPage) {
 		this.totalPage = totalPage;
-	}
-	public List<BookDTO> getListResult() {
-		return listResult;
-	}
-	public void setListResult(List<BookDTO> listResult) {
-		this.listResult = listResult;
 	}
 	public List<CategoryDTO> getListCategory() {
 		return listCategory;
@@ -52,6 +46,12 @@ public class BookOutput {
 	public void setListAuthor(List<AuthorDTO> listAuthor) {
 		this.listAuthor = listAuthor;
 	}
-	
-	
+
+	public List<BookDTO> getListBook() {
+		return listBook;
+	}
+
+	public void setListBook(List<BookDTO> listBook) {
+		this.listBook = listBook;
+	}
 }
