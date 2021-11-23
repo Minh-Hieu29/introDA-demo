@@ -8,6 +8,8 @@ import Checkout from '../UI/Checkout';
 import Book from '../UI/Product/Book';
 import Clothes from '../UI/Product/Clothes';
 import Shoes from '../UI/Product/Shoes';
+import Electronic from '../UI/Product/Electronic';
+import Register from '../UI/Login/Register';
 
 
 export const routes = [
@@ -28,6 +30,10 @@ export const routes = [
         component : Shoes
     },
     {
+        path : "/product/electronic",
+        component : Electronic
+    },
+    {
         path: "/product",
         component: Product,
     },
@@ -42,6 +48,10 @@ export const routes = [
     {
         path: "/login",
         component: Login
+    },
+    {
+        path: "/register",
+        component: Register
     },
     {
         path : "/cart",

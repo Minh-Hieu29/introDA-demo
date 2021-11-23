@@ -16,3 +16,9 @@ export const ShoseItem = () => {
         <div>Shoes</div>
     </div>
 }
+export const ElectronicItem = () => {
+    return <div style={{ width: "100px", height: "100px", borderRadius: "8px", margin: '10px 25px 10px 25px ' }}>
+        <img src= "https://static.vecteezy.com/system/resources/thumbnails/000/460/483/small/1403.i003.005.S.m004.c11.devices_emblem.jpg" style={{ width: '50px', height: '50px' }} />
+        <div>Electronic</div>
+    </div>
+}

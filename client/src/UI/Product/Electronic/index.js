@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios'
 import { Card, Button, Spin, Space } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
-import { addProduct, changeLoad } from './productSlide';
+import { addProduct, changeLoad } from '../productSlide';
 import { useHistory, useLocation } from 'react-router';
 import {
     BrowserRouter as Router,
@@ -12,16 +12,9 @@ import {
     Redirect,
     NavLink
 } from "react-router-dom";
-import Book from './Book';
-import Clothes from './Clothes';
-import Shoes from './Shoes';
-import Electronic from './Electronic'
-import { BookItem, ClothesItem, ElectronicItem, ShoseItem } from './const';
-// import store from '../../app/store';
+import { BookItem, ClothesItem, ShoseItem } from '../const';
 
-
-
-const Product = () => {
+const Electronic = () => {
     const [dataImg, setDataImg] = React.useState([])
     const [loading, setLoading] = useState(false)
     const location = useLocation();
@@ -68,23 +61,10 @@ const Product = () => {
     const { Meta } = Card;
     return (
         <div>
-
-            <div style={{ display: 'flex', flexWrap: 'wrap', width: '60%', justifyContent: 'center', margin: '0 auto' }}>
-                {/* {allProduct.map(item => {
-                   if(item.title =="Book"){
-                       return
-                      { <NavLink to="/product/book">
-                          { <div onClick = {() => handleProduct(item)} style = {{width : "100px" , height : "100px" , borderRadius : "8px" , margin : '10px 25px 10px 25px '}}>
-                        <img src={item.img} style={{width : '50px' ,height : '50px'}}/>
-                        <div>{item.title}</div>
-                    </div>}
-                       </NavLink>}
-                   }
-                })} */}
-                <NavLink to="/product/book" style={{ textDecoration: 'none', color: 'black' }}><BookItem /></NavLink>
-                <NavLink to="/product/clothes" style={{ textDecoration: 'none', color: 'black' }}><ClothesItem /></NavLink>
-                <NavLink to="/product/shoes" style={{ textDecoration: 'none', color: 'black' }}><ShoseItem /></NavLink>
-                <NavLink to="/product/electronic" style={{ textDecoration: 'none', color: 'black' }}><ElectronicItem /></NavLink>
+            <div style = {{display: 'flex', flexWrap: 'wrap', width: '60%', justifyContent: 'center', margin: '0 auto'}}>
+               <NavLink to="/product/book" style={{textDecoration : 'none' ,color : 'black'}}><BookItem /></NavLink>
+               <NavLink to="/product/clothes" style={{textDecoration : 'none' ,color : 'black'}}><ClothesItem /></NavLink>
+               <NavLink to="/product/shoes" style={{textDecoration : 'none' ,color : 'black'}}><ShoseItem /></NavLink>
             </div>
             {loading ? <Space size="middle" style={{ display: 'flex', justifyContent: 'center' }}>
                 <Spin size="small" />
@@ -119,18 +99,4 @@ const Product = () => {
     );
 };
 
-const allProduct = [
-    {
-        img: "https://www.adazing.com/wp-content/uploads/2019/02/open-book-clipart-03.png",
-        title: "Book"
-    },
-    {
-        img: "https://baabrand.com/wp-content/uploads/2018/12/icon-thiet-ke-linh-vuc-logo-thuong-hieu-thoi-trang-my-pham-lam-dep-spa-baa-brand-1-400x400.png",
-        title: "Clothes"
-    },
-    {
-        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIV5sy3l6UtAQbJC8eb2WnBtcvmzXd-qrIKw&usqp=CAU",
-        title: "Shoes"
-    }
-]
-export default Product;
+export default Electronic;
